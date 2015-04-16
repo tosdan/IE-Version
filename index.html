@@ -7,11 +7,23 @@
 </head>
 <body>
 
+<ul>
+	<li id="1">
+	<li id="2">
+	<li id="3">
+</ul>
+
+<script type="text/javascript" src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
 <script type="text/javascript" src="IE-Version.js"></script>
 <script type="text/javascript">
-console.log("ieBrowserVersion: " +IE.ieBrowserVersion);
-console.log("ieBrowserMode: " + IE.ieBrowserMode);
-console.log("ieDocumentMode: "+ IE.ieDocumentMode);
+IE.then(function (result) {
+	$('li#1').text("Versione di IE: " +result.ieBrowserVersion);
+	$('li#2').text("Modalità Browser: " +result.ieBrowserMode);
+	$('li#3').text("Modalità Documento: " +result.ieDocumentMode);
+	console.log("ieBrowserVersion: " +result.ieBrowserVersion);
+	console.log("ieBrowserMode: " + result.ieBrowserMode);
+	console.log("ieDocumentMode: "+ result.ieDocumentMode);
+});
 </script>
 
 </body>
