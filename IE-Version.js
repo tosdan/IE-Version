@@ -11,12 +11,12 @@ window.IE = (function () {
 		try {
 			 // Non supportato da IE 11
 			retval = /*@cc_on (function() { return jscriptEngineVer(@_jscript_version); }()) || 0 ;@*/ 0;		
-			if (console && DEBUG) {
+			if ('console' in window && DEBUG) {
 				console.log("@_jscript_version: " + retval);
 			}
 		} catch (e) {
 			retval = 0;
-			if (console && DEBUG) {
+			if ('console' in window && DEBUG) {
 				console.log("Error @_jscript_version: " + e.message);
 			}
 		}
@@ -25,7 +25,7 @@ window.IE = (function () {
 			// supportato anche da IE 11
 			retval = ScriptEngineMajorVersion() + '.' + ScriptEngineMinorVersion();
 			retval = jscriptEngineVer(retval);
-			if (console && DEBUG) {
+			if ('console' in window && DEBUG) {
 				console.log("ScriptEngine Major+.+Minor Version: " + retval);	
 			}
 		}
@@ -131,7 +131,7 @@ window.IE = (function () {
 				
 			} catch (e) {
 				result[1] = "<error>";
-				if (console && DEBUG) {
+				if ('console' in window && DEBUG) {
 					console.log(e.message);
 				}
 			}
